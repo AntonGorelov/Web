@@ -8,7 +8,7 @@
   }
 }
 
-@media screen and (max-device-width: 800px){
+@media screen and (max-device-width: 800px) {
   .header{
     text-align: center;
   }
@@ -27,18 +27,21 @@
   .experience-and-skills-container{
     text-align: center;
     justify-content: center;
-    }
-    .button-xp-and-skills{
-      justify-content: space-around;
-    }
-    .start-project-container{
-      flex-direction: column;
-      align-items: center;
-    }
-    .footer{
-      flex-direction: column;
-      align-items: center;
-    }
+  }
+  .button-xp-and-skills{
+    justify-content: space-around;
+  }
+  .start-project-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .button-start-project{
+    margin-bottom: 5px;
+  }
+  .contacts-container{
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 body {
@@ -47,7 +50,6 @@ body {
 
 .header-container{
   max-width: 1400px;
-  /*  max-width: 100%;*/
   margin: 0 auto;
   background-color: #9c9a96;
 }
@@ -79,12 +81,10 @@ body {
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
 }
-
 .logo{
   float: left;
   margin-top: 15px;
 }
-
 .button{
   margin: 35px 0px 100px;
   padding: 15px 15px;
@@ -100,7 +100,6 @@ body {
   -webkit-border-radius:  7px; /* Safari 4 */
   border-radius:  7px; /* IE 9, Safari 5, Chrome */
 }
-
 .navigation {
   list-style: none;
   margin: 0 auto;
@@ -114,7 +113,6 @@ body {
   -webkit-flex-flow: row wrap;
   justify-content: flex-end;
 }
-
 .navigation a {
   text-decoration: none;
   display: block;
@@ -124,28 +122,52 @@ body {
   text-transform: uppercase;
 }
 
-.features-container{
-}
 
+.features-container_item{
+  font-family: 'Cabin Regular', arial;
+  color: black;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+}
+.features-container_item{
+  display: flex;
+  flex-direction: column;
+  width: 328px;
+  height:209px;
+}
 .features-container_item{
   display: inline-block;
   transition: .5s;
-  margin-bottom: 100px;
+  margin-top: 30px;
+  margin-bottom: 130px;
 }
-
 .features_text{
   font-family: 'Cabin Regular', arial;
   color: black;
   margin: 100px 0px 30px;
-  font-size: 30px;
+  font-size: 35px;
   text-align: center;
   display: block;
 }
+.features-icon-1 {
+    display: inline-block;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    position: absolute;
+    left: 41%;
+    top: -18%;
+}
+
+
 
 .short-story{
   background: #e9ebea;
 }
-
 .short-story-container {
   font-family: 'Cabin Regular', arial;
   font-size: 20px;
@@ -155,13 +177,11 @@ body {
   max-width: 100%;
   display: flex;
 }
-
 .short-story-container_item {
   width: 50%;
   margin-top: 100px;
   margin-bottom: 100px;
 }
-
 .short-story-text{
   font-family: 'Cabin Regular', arial;
   font-size: 18px;
@@ -169,7 +189,6 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
 .button-short-story{
   background-color: #e9ebea;
   outline: none;
@@ -189,6 +208,8 @@ body {
 }
 
 
+
+
 .client-say-container{
   display: flex;
   margin: 0 auto;
@@ -196,11 +217,9 @@ body {
   width: 1040px;
   max-width: 100%;
 }
-
 .client-say-container_item{
   display: flex;
 }
-
 .client-say-text{
   font-family: 'Cabin Regular', arial;
   color: black;
@@ -221,7 +240,6 @@ body {
   height:525px;
   background-color: white;
 }
-
 p.client-say-1 {
 	position: relative;
 	width: 90%;
@@ -282,7 +300,6 @@ p.client-say-2:after {
 	border: 5px solid;
 	border-color: #fff transparent transparent #fff;
 }
-
 .client-info{
   display: flex;
   justify-content: space-between;
@@ -301,6 +318,7 @@ p.client-say-2:after {
   text-align: right;
   width: 350px;
 }
+
 
 
 .experience-and-skills{
@@ -476,6 +494,7 @@ a.skill-btn {
 }
 
 
+
 .blog{
 
 }
@@ -528,10 +547,6 @@ a.skill-btn {
 
 
 
-
-
-
-
 .start-project-main{
   display: flex;
   background-color: #35c36d;
@@ -550,7 +565,6 @@ a.skill-btn {
   width: 1040px;
   max-width: 100%;
 }
-
 .start-project-left{
   display: flex;
   flex-direction: column;
@@ -586,16 +600,20 @@ a.skill-btn {
 }
 
 
+
 .contacts{
   background-color: black;
+  display: flex;
+  margin: 0 auto;
+  width: auto;
 }
 .contacts-container{
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
   font-family: 'Cabin Regular', arial;
+  background-color: black;
   width:auto;
-  height: 241px;
   width: 1040px;
   padding: 20px 0px;
   max-width: 100%;
