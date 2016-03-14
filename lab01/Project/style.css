@@ -1,0 +1,35 @@
+body {
+	margin: 0;
+	background-color: #FFF;
+}
+
+* {
+	font-family: sans-serif, helvetica, arial;
+}
+
+.header {
+	width: 900 px;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 15 px 10px 0px;
+}
+
+.logo {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.tel {
+	text-decoration: none;
+	color: #ff7f50;
+	font-size: 15px;
+	float: right;
+	margin-right: 50px;
+	margin-top: 15;
+}
+
+.navbar {
+	margin: 0 auto;
+	width: 900 px;
+	color: #ff7f50;
+}

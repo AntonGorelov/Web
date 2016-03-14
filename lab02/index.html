@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+  <script>
+    var assert = chai.assert;
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <script>
+    function checkBracket(str) {
+      var stack = [];
+      var open = "([{";
+      var close = ")]}";
+      var offset = 0;
+      for (var i = 0; i < str.length; ++i) {
+      	  offset = open.indexOf(str[i], 0);
+      		if (~offset) { stack.push(offset); }
+          else {
+      		  offset = close.indexOf(str[i], 0);
+                if (~offset) {
+                  if (stack.length === 0) return -1;
+                  if (offset === stack[stack.length - 1]) {
+                    stack.pop();
+      			}
+                  else {
+                    return i;
+      			}
+      		  }
+              }
+        }
+      	if (stack.length === 0) return 0;
+        else
+          return -1;
+    }
+    function validateEmail(str) {
+      var filter = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+      return filter.test(str);
+    }
+    function validatePhone(str) {
+      // номер телефона - 11 или 10 цифр
+      var filter1 = /^\8([0-9])*$/;
+      var filter2 = /^\+7([0-9])*$/;
+      var filter3 = /^7([0-9])*$/;
+      var filter4 = /^8([0-9]{3})[-]([0-9]{3})[-]([0-9]{2})[-]([0-9]{2})$/;
+      var filter5 = /^\+7([0-9]{3})[-]([0-9]{3})[-]([0-9]{2})[-]([0-9]{2})$/;
+      var filter6 = /^7([0-9]{3})[-]([0-9]{3})[-]([0-9]{2})[-]([0-9]{2})$/;
+      return ((filter1.test(str)) || (filter2.test(str)) || (filter3.test(str)) || (filter4.test(str)) || (filter5.test(str)) || (filter6.test(str)));
+    }
+    function validateBankCard(str) {
+      str = str.replace(/\D/g,'');
+  		return (/([0-9]{4}[- ]?){4}/).test(str);
+    }
+    function replaceWords(str,strarray) {
+
+      function changestr(str) { return str.replace(/./g, "*") }
+      for (var i = 0; i < strarray.length; i++)
+				{
+					var repstr = strarray[i];
+					str=str.replace(new RegExp(repstr,'g'), changestr)
+				};
+			return str
+    }
+    function countEachTagByParentId(id) {
+      var result = { };
+      var s = document.getElementById(id).getElementsByTagName('*');
+      for (var i = 0; i < s.length; ++i) {
+          var tn = s[i].tagName;
+          if (tn in result) {
+              result[tn] += 1;
+          }
+          else {
+              result[tn] = 1;
+          }
+      }
+      return result;
+    }
+
+    function addToFlex(id) {
+      var flexContainer = document.getElementsByClassName(id)[0];//получает все элементы заданного класса
+      var div = document.createElement('div элемент');//в HTML создает указанный в аргументе элемент
+      var text = document.createTextNode('новый элемент контейнера ');
+      div.appendChild(text);
+      flexContainer.appendChild(div);
+    }
+    function removeFromFlex(id) {
+      var flexContainer = document.getElementsByClassName(id)[0];
+      var elems = flexContainer.getElementsByTagName('div');
+      var div = elems[elems.length - 1];
+      flexContainer.removeChild(div);
+    }
+    function changeFlexDirection(id, direction) {
+      var flexContainer = document.getElementsByClassName(id)[0];
+      flexContainer.style.flexDirection = direction;
+    }
+    function changeFlexWrap(id, wrap) {
+      var flexContainer = document.getElementsByClassName(id)[0];
+      flexContainer.style.flexWrap = wrap;
+    }
+    function reOrderFlex(id) {
+      function randomNumber (m,n)
+      {
+        m = parseInt(m);
+        n = parseInt(n);
+        return Math.floor( Math.random() * (n - m + 1) ) + m;
+      }
+    }
+
+    function shuffle(array) {
+          var curInd = array.length, randInd, tempValue;
+          while (0 !== curInd) {
+            randIndex = Math.floor(Math.random() * curInd);
+            tempValue = array[curInd];
+            curInd -= 1;
+            array[curInd] = array[randIndex];
+            array[randIndex] = tempValue;
+          }
+          return array;
+        }
+        var flexContainer = document.getElementsByClassName(id)[0];
+        var elems = flexContainer.getElementsByTagName('div');
+        var elemsArr = [];
+        for (var i = 0; i < elems.length; ++i) {
+            elemsArr[i] = elems[i];
+        }
+        elemsArr = shuffle(elemsArr);
+
+        while (flexContainer.firstChild) {
+            flexContainer.removeChild(flexContainer.firstChild);
+        }
+
+        for (var i = 0; i < elemsArr.length; ++i) {
+            flexContainer.appendChild(elemsArr[i]);
+        }
+
+        function Form(obj){
+	        var flag = true;
+          var is_mail = /[0-9a-z_]+@[0-9a-z_^.]+.[a-z]{2,3}/i;
+          var is_sender = /[a-z]+/i;
+          var mail = obj.mail.value;
+          var sender = obj.fname.value;
+          var msg = obj.msg.value;
+          var error = "Не корректно заполнено поле: ";
+          if(is_sender.exec(sender) == null && sender ==""){
+            error += "имя ";
+            flag = false;
+          }
+          if(is_mail.exec(mail) == null){
+            error += "email ";
+            flag = false;
+          }
+          if(msg == ""){
+            error += "сообщение ";
+            flag = false;
+          }
+          if(!flag) alert(error)
+				  else alert("Форма заполнена правильно!");
+    }
+  </script>
+
+
+  <script src="asserts/tests.js"></script>
+
+    <div id="mocha"></div>
+    <div class="flex-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <!-- Контейнер для кнопок -->
+    <div class="flex-container-controls">
+
+    </div>
+
+
+  <script>
+    mocha.run();
+  </script>
+
+
+
+  <div id = "countTags1" style = "display: none">
+    <p><strong>Lorem ipsum</strong> dolor sit amet, <span>consectetur adipisicing elit</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <br /> quis nostrud exercitation ullamco <br /> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <span>reprehenderit</span> in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <strong>Excepteur sint</strong> occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  <div id = "countTags2" style = "display: none">
+    <p>Lorem ipsum</p>
+    <p>dolor sit amet</p>
+    <p>consectetur adipisicing elit</p>
+    <h1> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
+    <div>Ut enim ad minim veniam, <br /> quis nostrud exercitation ullamco <br /> laboris nisi ut aliquip ex ea commodo consequat.</div>
+  </div>
+  <div id = "countTags3" style = "display: none"></div>
+
+  <form  onsubmit="return Form(this);">
+        <table>
+            <tr>
+                <td>Введите имя:</td>
+                <td><input type="text" name="fname"/></td>
+            </tr>
+            <tr>
+                <td>Введите текст:</td>
+                <td><textarea name="msg"></textarea></td>
+            </tr>
+            <tr>
+                <td>Введите email:</td>
+                <td><input type="text" name="mail"/></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left"><input type="submit" name="send" value="Отправить"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
