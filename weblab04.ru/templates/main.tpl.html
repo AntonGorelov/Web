@@ -1,0 +1,11 @@
+<main rel="main">
+  <section class="dtwo-tab dtwo-container">
+    <div class="dtwo-tab__item" ng-repeat="tab in about.tabs" ng-hide="{{tab.tab == 0}}"><a href="{{tab.link.path}}" ng-click="about.setTab(tab.tab, $event)"><img ng-src="{{tab.image}}" height="400" width="300" alt="{{tab.title}}" title="{{tab.title}}"></a></div>
+  </section>
+  <article class="dtwo-about dtwo-container" ng-show="about.isActive(tab.tab)" ng-repeat="tab in about.tabs">
+    <h1 class="dtwo-about__title">{{tab.title}}</h1>
+    <div class="dtwo-separator"></div>
+    <p class="dtwo-about__text">{{tab.text}}</p>
+    <a class="dtwo-about__link" href="{{tab.link.path}">{{tab.link.title}}</a>
+  </article>      
+</main>
