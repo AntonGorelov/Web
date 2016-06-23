@@ -1,0 +1,209 @@
+    <div class="header-container">
+        <header class = "header">
+          		<div>
+					<div ng-controller="HeaderTextController as header">
+						<a class="logo" href="#home"><img ng-src="img/logo.png" height="20" width="200" alt="logo" title="logo"></a>
+					</div>
+					<nav class="nav-container" ng-controller="NavbarController as navbar">
+						<ul class="navigation">
+							<li ng-repeat="link in navbar.links"><a class="scroll" href="{{link.path}}">{{link.title}}</a></li>
+						</ul>
+					</nav>
+
+          		</div>
+
+          		<div class = "content">
+					<div class="content_line" ng-controller="HeaderTextController as header">We're here to create your online presense and style</div>
+          		</div>
+				<div ng-controller="HeaderTextController as header">
+					<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Suspendisse</p>
+					<p class="text">mattis orci dapibus risus dignissim, viverra pellentesque arcu </p>
+					<p class="text">ullamcorper. Mauris a tincidunt lectus. Proin nec venenatis quam.</p>
+					<a class = "button" href="#"> start today with us </a>
+				</div>
+    	</header>
+    </div>
+  
+    <div class="features-container" ng-controller="FeaturesController as features" align="center">
+	    <h1 class="features_text">Features you'll love</h1>
+        <ul class="features-list">
+			<a class="scroll" href="{{link.path}}"></a>
+         	<div class="features-container_item" ng-repeat="link in features.links">
+         		<div>
+					<img ng-src="{{link.image}}" height="65" width="65" alt="{{link.alt}}" title="{{link.title}}">
+				</div>
+         		<h3>{{link.header}}</h3>
+         	    <p>{{link.text}}</p>
+         	</div>
+       	</ul>
+    </div>
+
+	<div class="single-feature page">
+
+				<div class="overlay"></div>
+
+				<div class="preview-large">
+					<h3>Single product view</h3>
+					<p></p>
+
+					<span class="close">×</span>
+				</div>
+	</div>
+  </div>
+
+  <section id="about">
+  <div class="short-story" ng-controller="ShortStoryController as SSbar">
+      <div class="short-story-container">
+          <div class="short-story-container_item">
+            <img ng-src="{{SSbar.image}}" height="400" width="320" alt="mac" title="mac">
+          </div>
+          <div class="short-story-container_item">
+            <h1 class="short-story-header">{{SSbar.header}}</h1>
+            <div class="short-story-text"> {{SSbar.fulltext}} </div>
+            <div class="short-story-text"> {{SSbar.fulltext}} </div>
+            <a class = "button-short-story" href="#"> {{SSbar.button}} </a>
+          </div>
+      </div>
+  </div>
+  </section>
+
+  <div class="client-say">
+      <h1 class="client-say-text">Our Clients Says</h1>
+      <div class="client-say-container">
+          <div class="client-say-container_item">
+            <div class="client-say-left" ng-controller="ClientSayController1 as CSbar">
+
+			<div class="client-info1" ng-repeat="linkCS in CSbar.linkCS">
+                <p class="client-say-1">
+                  {{linkCS.text}}
+                </p>
+                <div class="client-info">
+                    <div class="client-info-img">
+                      <img class="client-info-img1" ng-src="{{linkCS.image}}" width="50" height="50" alt="client1">
+                    </div>
+                    <div class="client-info-txt">
+                      <div class="client-info-data"> {{linkCS.name}}</div>
+                      <div class="client-info-name"> {{linkCS.prof}}</div>
+                    </div>
+                </div>
+			</div>
+            </div>
+          </div>
+          <div class="client-say-right" ng-controller="ClientSayController2 as CSbar">
+		  
+		  <div class="client-info2" ng-repeat="linkCS in CSbar.linkCS">	
+                <p class="client-say-2">
+                  {{linkCS.text}}
+                </p>
+                <div class="client-info">
+                    <div class="client-info-img">
+                      <img class="client-info-img1" ng-src="{{linkCS.image}}" width="50" height="50" alt="client2">
+                    </div>
+                    <div class="client-info-txt">
+                      <div class="client-info-data"> {{linkCS.name}}</div>
+                      <div class="client-info-name"> {{linkCS.prof}}</div>
+                    </div>
+                </div>
+                
+           </div>
+
+          </div>
+      </div>
+  </div>
+
+  <section id="products">
+  <div class="experience-and-skills" ng-controller="XpSkillsController as XSbar">
+    <div class="experience-and-skills-container">
+        <div class="experience-and-skills-container_item">
+          <div class="experience-and-skills-left">
+            <h1 class="experience-and-skills-text">Our Experience</h1>
+            <p class="xp-and-skills-main-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment uectetur tortor id, pharetra lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment uectetur tortor id, pharetra lorem.
+            </p>
+            <p class="xp-and-skills-main-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment uectetur tortor id, pharetra lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment uectetur tortor id, pharetra lorem.
+            </p>
+            <a class = "button-xp-and-skills" href="#"> START YOU PROJECT </a>
+          </div>
+          <div class="experience-and-skills-right">
+				<div class="skill-bars">
+    			<div class="poling">
+                    <h3 >Skills</h3>
+					<div class="XSbar-block" ng-repeat="linkXS in XSbar.links">
+						<div class="poligon">
+        			        <div class="poligon_description"> <h4>{{linkXS.desc}}</h4> </div>
+        				    <div class="percentage"> <p>{{linkXS.percentage}}</p> </div>
+        				    <div class="clearfix"></div>
+        			        <div class="skills">
+        			              <div style="width:{{linkXS.width}}"> </div>
+						    </div>
+      				    </div>   
+    				</div>
+				</div>
+				</div>
+		  </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <div class="blog1" ng-controller="BlogController as Blogbar">
+	<div class="blog-header">
+		<h3>From the Blog</h3>
+	</div>
+  </div>
+  <div class="blog" ng-controller="BlogController as Blogbar">
+        
+		<div class="container" ng-repeat="linkBlog in Blogbar.blog">
+			<div class="blog-block1">
+				<img src="{{linkBlog.image}}" width="350" height="244" alt="">
+				<div class="blog-info">
+					<h3>{{linkBlog.title}}</h3>
+					<div class="blog-text">
+						<h5 class="date">{{linkBlog.date}}</h5>
+						<h5 class="comment">{{linkBlog.comments}}</h5>
+					</div>
+				</div>
+                <div class="blog-main-text">
+					<p>{{linkBlog.text}}</p>
+                </div>
+			</div>
+		</div>
+  </div>
+
+
+
+  <div class="start-project-main">
+      <div class="start-project-container" ng-controller="StartProjectController as StartProjbar">
+          <div class="start-project-left">
+            <div class="start-project-header">
+              {{StartProjbar.header}}
+            </div>
+            <div class="start-project-main">
+              {{StartProjbar.text}}
+            </div>
+          </div>
+          <div class="start-project-right">
+            <a class = "button-start-project" href="#"> {{StartProjbar.button}} </a>
+          </div>
+
+      </div>
+  </div>
+
+	<footer>
+    <section id="contacts">
+    <div class="contacts">
+      <div class="contacts-container" ng-controller="ContactsController as Contbar">
+          <div class="contacts-logo">
+              <img src="img/logo.png" width="200" height="20" alt="logo">
+          </div>
+          <div class="contacts-block1" ng-repeat="linkCont in Contbar.links">
+              <h3>{{linkCont.city}}</h3>
+              <p>{{linkCont.text}}</p>
+              <h5>{{linkCont.tel}}</h5>
+              <a class="contact-mail" href="mailto:info@example.com"><h6>{{linkCont.email}} </h6></a>
+          </div>
+      </div>
+    </div>
+    </section>
+	</footer>
