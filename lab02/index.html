@@ -85,62 +85,56 @@
     }
 
     function addToFlex(id) {
-      var flexContainer = document.getElementsByClassName(id)[0];//получает все элементы заданного класса
-      var div = document.createElement('div элемент');//в HTML создает указанный в аргументе элемент
-      var text = document.createTextNode('новый элемент контейнера ');
-      div.appendChild(text);
-      flexContainer.appendChild(div);
-    }
-    function removeFromFlex(id) {
-      var flexContainer = document.getElementsByClassName(id)[0];
-      var elems = flexContainer.getElementsByTagName('div');
-      var div = elems[elems.length - 1];
-      flexContainer.removeChild(div);
-    }
-    function changeFlexDirection(id, direction) {
-      var flexContainer = document.getElementsByClassName(id)[0];
-      flexContainer.style.flexDirection = direction;
-    }
-    function changeFlexWrap(id, wrap) {
-      var flexContainer = document.getElementsByClassName(id)[0];
-      flexContainer.style.flexWrap = wrap;
-    }
-    function reOrderFlex(id) {
-      function randomNumber (m,n)
-      {
-        m = parseInt(m);
-        n = parseInt(n);
-        return Math.floor( Math.random() * (n - m + 1) ) + m;
-      }
-    }
-
-    function shuffle(array) {
-          var curInd = array.length, randInd, tempValue;
-          while (0 !== curInd) {
-            randIndex = Math.floor(Math.random() * curInd);
-            tempValue = array[curInd];
-            curInd -= 1;
-            array[curInd] = array[randIndex];
-            array[randIndex] = tempValue;
-          }
-          return array;
-        }
+        var flexContainer = document.getElementsByClassName(id)[0];
+        var div = document.createElement('div');
+        var text = document.createTextNode('new flex element');
+        div.appendChild(text);
+        flexContainer.appendChild(div);
+}
+function removeFromFlex(id) {
         var flexContainer = document.getElementsByClassName(id)[0];
         var elems = flexContainer.getElementsByTagName('div');
+        var div = elems[elems.length - 1];
+        flexContainer.removeChild(div);
+}
+function changeFlexDirection(id, direction) {
+        var flexContainer = document.getElementsByClassName(id)[0];
+        flexContainer.style.flexDirection = direction;
+}
+function changeFlexWrap(id, wrap) {
+        var flexContainer = document.getElementsByClassName(id)[0];
+        flexContainer.style.flexWrap = wrap;
+}
+
+function reOrderFlex(id) {
+        function randomNumber (m,n)
+        {
+          m = parseInt(m);
+          n = parseInt(n);
+          return Math.floor( Math.random() * (n - m + 1) ) + m;
+        }
+        function shuffle(array) {
+            var cur = array.length, tempVal, randomNum;
+            while (0 !== cur) {
+                randomNum = Math.floor(Math.random() * cur);
+                cur -= 1;
+                tempVal = array[cur];
+                array[cur] = array[randomNum];
+                array[randomNum] = tempVal;
+            }
+            return array;
+        }
+        var flexContainer = document.getElementsByClassName(id)[0];
         var elemsArr = [];
-        for (var i = 0; i < elems.length; ++i) {
-            elemsArr[i] = elems[i];
+        for (var i = 0; i < flexContainer.getElementsByTagName('div').length; ++i) {
+            elemsArr[i] = flexContainer.getElementsByTagName('div')[i];
         }
         elemsArr = shuffle(elemsArr);
-
-        while (flexContainer.firstChild) {
-            flexContainer.removeChild(flexContainer.firstChild);
-        }
-
+        while (flexContainer.firstChild) { flexContainer.removeChild(flexContainer.firstChild); }
         for (var i = 0; i < elemsArr.length; ++i) {
             flexContainer.appendChild(elemsArr[i]);
         }
-
+}
         function Form(obj){
 	        var flag = true;
           var is_mail = /[0-9a-z_]+@[0-9a-z_^.]+.[a-z]{2,3}/i;
@@ -179,7 +173,17 @@
     </div>
     <!-- Контейнер для кнопок -->
     <div class="flex-container-controls">
-
+		<input class = "btn_click_1" type = "button" value = "Изменить порядок" onclick = "reOrderFlex('flex-container')" />
+		<input class = "btn_click_2" type = "button" value = "Добавить контейнер" onclick = "addToFlex('flex-container')" />
+		<input class = "btn_click_3" type = "button" value = "Изменить flex-wrap на wrap" onclick = "changeFlexWrap('flex-container','wrap')" />
+		<input class = "btn_click_4" type = "button" value = "Изменить flex-wrap на nowrap" onclick = "changeFlexWrap('flex-container','nowrap')" />
+		<input class = "btn_click_5" type = "button" value = "Изменить flex-wrap на wrap-reverse" onclick = "changeFlexWrap('flex-container','wrap-reverse')" />
+		<input class = "btn_click_6" type = "button" value = "Изменить flex-direction на row" onclick = "changeFlexDirection('flex-container','row')" />
+		<input class = "btn_click_7" type = "button" value = "Изменить flex-direction на column" onclick = "changeFlexDirection('flex-container','column')" />
+		<input class = "btn_click_8" type = "button" value = "Изменить flex-direction на column-reverse" onclick = "changeFlexDirection('flex-container','column-reverse')" />
+		<input class = "btn_click_9" type = "button" value = "Изменить flex-direction на row-reverse" onclick = "changeFlexDirection('flex-container','row-reverse')" />
+		<input class = "btn_click_10" type = "button" value = "Удалить контейнер" onclick = "removeFromFlex('flex-container')" />
+		
     </div>
 
 

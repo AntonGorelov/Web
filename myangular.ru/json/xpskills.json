@@ -1,0 +1,34 @@
+{
+  "header1": "Our Experience",
+  "header2": "Skills",
+  "button":  "START YOU PROJECT",
+  "text":    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment uectetur tortor id, pharetra lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment uectetur tortor id, pharetra lorem.",
+  "links":   
+  [
+	  {
+		"desc":       "C++ development",
+		"percentage": "90%",
+		"width":      "95%" 
+	  },
+	  {
+		"desc":       ".Net",
+		"percentage": "75%",
+		"width":      "75%" 	  
+	  },
+	  {
+		"desc":       "HTML5",
+		"percentage": "80%",
+		"width":      "80%" 
+	  },
+	  {
+		"desc":       "JQuery",
+		"percentage": "80%",
+		"width":      "80%" 
+	  },
+	  {
+		"desc":       "Angular",
+		"percentage": "60%",
+		"width":      "60%" 
+	  }
+  ]
+}

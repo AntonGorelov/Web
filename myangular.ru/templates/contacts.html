@@ -1,0 +1,57 @@
+<div class="header-container">
+        <header class = "header">
+          		<div>
+					<div ng-controller="HeaderTextController as header">
+						<a class="logo" href="#"><img ng-src="{{header.headerlogo}}" height="20" width="200" alt="logo" title="logo"></a>
+					</div>
+					<nav class="nav-container" ng-controller="NavbarController as navbar">
+						<ul class="navigation">
+							<li ng-repeat="link in navbar.links"><a class="scroll" href="{{link.path}}">{{link.title}}</a></li>
+						</ul>
+					</nav>
+
+          		</div>
+
+          		<div class = "content">
+					<div class="content_line" ng-controller="HeaderTextController as header">{{header.headertext}}</div>
+          		</div>
+				<div ng-controller="HeaderTextController as header">
+					<p class="text">{{header.headertext2}}</p>
+					<p class="text">{{header.headertext3}}</p>
+					<p class="text">{{header.headertext4}}</p>
+					<a class = "button" href="/#/about"> {{header.button}} </a>
+				</div>
+    	</header>
+    </div>
+  <div class="start-project-main">
+      <div class="start-project-container" ng-controller="StartProjectController as StartProjbar">
+          <div class="start-project-left">
+            <div class="start-project-header">
+              {{StartProjbar.header}}
+            </div>
+            <div class="start-project-main">
+              {{StartProjbar.text}}
+            </div>
+          </div>
+          <div class="start-project-right">
+            <a class = "button-start-project" href="#"> {{StartProjbar.button}} </a>
+          </div>
+
+      </div>
+  </div>
+  
+<section id="contacts">
+    <div class="contacts">
+      <div class="contacts-container" ng-controller="ContactsController as Contbar">
+          <div class="contacts-logo">
+              <img src="{{Contbar.image}}" width="200" height="20" alt="logo">
+          </div>
+          <div class="contacts-block1" ng-repeat="linkCont in Contbar.links">
+              <h3>{{linkCont.city}}</h3>
+              <p>{{linkCont.text}}</p>
+              <h5>{{linkCont.tel}}</h5>
+              <a class="contact-mail" href="mailto:info@example.com"><h6>{{linkCont.email}} </h6></a>
+          </div>
+      </div>
+    </div>
+  </section>

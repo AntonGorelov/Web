@@ -1,0 +1,33 @@
+{ "header":   "Our Clients Says",
+  "left":[
+	  {
+		"text": "Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ",
+		"name": "Nina B",
+		"prof": "Creative Director at Gmoogle.com",
+		"image": "img/client1.png"
+	  },
+	  
+	  {
+		"text": "Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.",
+		"name": "Nina B",
+		"prof": "Creative Director at Gmoogle.com",
+		"image": "img/client1.png"
+	  }
+  ],
+   "right": [
+	  {
+		"text": "Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+		"name": "Alica Diz",
+		"prof": "Creative Director at Gmoogle.com",
+		"image": "img/client2.png"
+	  },
+	  
+	  {
+		"text": "Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+		"name": "Alica Diz",
+		"prof": "Creative Director at Gmoogle.com",
+		"image": "img/client2.png"
+	  }
+  ]
+
+}

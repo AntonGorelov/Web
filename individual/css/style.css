@@ -1,10 +1,42 @@
 @font-face {
   font-family: 'Cabin Regular', arial;
-  src: url('../fonts/cabin-regular.ttf');
+  src: url('../fonts/poiretone-regular-webfont.woff');
 }
 @media screen and (max-device-width: 400px){
   .header{
     text-align: center;
+  }
+  div.short-story-container_item {
+    width: 96%;
+    max-width: 960px;
+    margin: 0 auto; /* центрируем основной контейнер */
+  }
+  img.short-story-container_item {
+    width: 40%; /* ширина картинки */
+    height: auto; /* высота картинки */
+  }
+  div.client-say-container{
+    width: 96%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1070px){
+  .client-say-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .experience-and-skills-container-item{
+    flex-direction: column;
+    align-items: center;
+  }
+  .experience-and-skills-container{
+    flex-direction: column;
+  }
+  .experience-and-skills-container_item{
+    flex-direction: column;
+    align-items: center;
   }
 }
 

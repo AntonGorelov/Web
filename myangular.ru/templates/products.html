@@ -1,0 +1,60 @@
+<div class="header-container">
+        <header class = "header">
+          		<div>
+					<div ng-controller="HeaderTextController as header">
+						<a class="logo" href="#"><img ng-src="{{header.headerlogo}}" height="20" width="200" alt="logo" title="logo"></a>
+					</div>
+					<nav class="nav-container" ng-controller="NavbarController as navbar">
+						<ul class="navigation">
+							<li ng-repeat="link in navbar.links"><a class="scroll" href="{{link.path}}">{{link.title}}</a></li>
+						</ul>
+					</nav>
+
+          		</div>
+
+          		<div class = "content">
+					<div class="content_line" ng-controller="HeaderTextController as header">{{header.headertext}}</div>
+          		</div>
+				<div ng-controller="HeaderTextController as header">
+					<p class="text">{{header.headertext2}}</p>
+					<p class="text">{{header.headertext3}}</p>
+					<p class="text">{{header.headertext4}}</p>
+					<a class = "button" href="/#/about"> {{header.button}} </a>
+				</div>
+    	</header>
+    </div>
+<section id="products">
+  <div class="experience-and-skills" ng-controller="XpSkillsController as XSbar">
+    <div class="experience-and-skills-container">
+        <div class="experience-and-skills-container_item">
+          <div class="experience-and-skills-left">
+            <h1 class="experience-and-skills-text">{{XSbar.header1}}</h1>
+            <p class="xp-and-skills-main-text">
+              {{XSbar.text}}
+            </p>
+            <p class="xp-and-skills-main-text">
+              {{XSbar.text}}
+            </p>
+            <a class = "button-xp-and-skills" href="#"> {{XSbar.button}} </a>
+          </div>
+          <div class="experience-and-skills-right">
+				<div class="skill-bars">
+    			<div class="poling">
+                    <h3 >{{XSbar.header2}}</h3>
+					<div class="XSbar-block" ng-repeat="linkXS in XSbar.links">
+						<div class="poligon">
+        			        <div class="poligon_description"> <h4>{{linkXS.desc}}</h4> </div>
+        				    <div class="percentage"> <p>{{linkXS.percentage}}</p> </div>
+        				    <div class="clearfix"></div>
+        			        <div class="skills">
+        			              <div style="width:{{linkXS.width}}"> </div>
+						    </div>
+      				    </div>   
+    				</div>
+				</div>
+				</div>
+		  </div>
+      </div>
+    </div>
+  </div>
+  </section>

@@ -1,0 +1,41 @@
+<div class="header-container">
+        <header class = "header">
+          		<div>
+					<div ng-controller="HeaderTextController as header">
+						<a class="logo" href="#"><img ng-src="{{header.headerlogo}}" height="20" width="200" alt="logo" title="logo"></a>
+					</div>
+					<nav class="nav-container" ng-controller="NavbarController as navbar">
+						<ul class="navigation">
+							<li ng-repeat="link in navbar.links"><a class="scroll" href="{{link.path}}">{{link.title}}</a></li>
+						</ul>
+					</nav>
+
+          		</div>
+
+          		<div class = "content">
+					<div class="content_line" ng-controller="HeaderTextController as header">{{header.headertext}}</div>
+          		</div>
+				<div ng-controller="HeaderTextController as header">
+					<p class="text">{{header.headertext2}}</p>
+					<p class="text">{{header.headertext3}}</p>
+					<p class="text">{{header.headertext4}}</p>
+					<a class = "button" href="/#/about"> {{header.button}} </a>
+				</div>
+    	</header>
+</div>
+</div>
+<section id="about">
+  <div class="short-story" ng-controller="ShortStoryController as SSbar">
+      <div class="short-story-container">
+          <div class="short-story-container_item">
+            <img ng-src="{{SSbar.image}}" height="400" width="320" alt="mac" title="mac">
+          </div>
+          <div class="short-story-container_item">
+            <h1 class="short-story-header">{{SSbar.header}}</h1>
+            <div class="short-story-text"> {{SSbar.fulltext}} </div>
+            <div class="short-story-text"> {{SSbar.fulltext}} </div>
+            <a class = "button-short-story" href="#"> {{SSbar.button}} </a>
+          </div>
+      </div>
+</div>
+</section>

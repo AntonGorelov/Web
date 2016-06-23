@@ -1,0 +1,27 @@
+{
+  "header": "From the Blog",
+  "links":   
+  [
+	  {
+		"image":  	"img/pic1.png",
+		"title":  	"Cache Invalidation Strategies With Varnish Cache",
+		"date":   	"March 30,2014",
+	    "comments": "2 Comments",
+		"text":     "Shortly thereafter, I was working with RetailMeNot, tasked with designing its iOS and Android app tutorial The product team wanted to make sure that users were clear about the value."
+	  },
+	  {
+		"image":  	"img/pic2.png",
+		"title":  	"Cache Invalidation Strategies With Varnish Cache",
+		"date":   	"March 30,2015",
+	    "comments": "5 Comments",
+		"text":     "Shortly thereafter, I was working with RetailMeNot, tasked with designing its iOS and Android app tutorial The product team wanted to make sure that users were clear about the value."
+	  },
+	  {
+		"image":  	"img/pic3.png",
+		"title":  	"Cache Invalidation Strategies With Varnish Cache",
+		"date":   	"March 30,2014",
+	    "comments": "2 Comments",
+		"text":     "Shortly thereafter, I was working with RetailMeNot, tasked with designing its iOS and Android app tutorial The product team wanted to make sure that users were clear about the value." 
+	  }
+  ]
+}

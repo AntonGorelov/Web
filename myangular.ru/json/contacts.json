@@ -1,0 +1,24 @@
+{ "image":   "img/logo.png",
+  "links":[
+	  {
+		"city":  "NEW YORK",
+		"text":  "Address goes here in a one or two lines, maybe lorem ipsum.",
+		"tel":   "+44 800 800 90",
+		"email": "info@domen.com "
+	  },
+	  
+	  {
+		"city":  "LONDON",
+		"text":  "Address goes here in a one or two lines, maybe lorem ipsum.",
+		"tel":   "+8 900 000 000",
+		"email": "info@domen.com "
+	  },
+	  
+	  {
+		"city":  "MADRID",
+		"text":  "Address goes here in a one or two lines, maybe lorem ipsum.",
+		"tel":   "+44 800 800 90",
+		"email": "info@domen.com "
+	  }
+  ]
+}
